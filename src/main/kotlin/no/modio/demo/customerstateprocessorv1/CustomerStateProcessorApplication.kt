@@ -12,5 +12,5 @@ import org.springframework.boot.runApplication
 class CustomerStateProcessorApplication
 
 fun main(args: Array<String>) {
-	runApplication<no.modio.demo.customerstateprocessorv1.CustomerStateProcessorApplication>(*args)
+	runApplication<CustomerStateProcessorApplication>(*args)
 }

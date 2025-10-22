@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.7</version>
+		<version>3.5.6</version>
 	</parent>
 
 	<groupId>io.stene.demo</groupId>
@@ -23,7 +23,7 @@
 
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<confluent.platform.version>6.2.2</confluent.platform.version>
 		<kotest.version>4.6.3</kotest.version>
 		<googlelibphonenumber.version>8.12.19</googlelibphonenumber.version>
@@ -108,18 +108,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>build-info</goal>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
+
+			<!-- Pin the Kotlin Maven plugin to the same version -->
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
 				<artifactId>kotlin-maven-plugin</artifactId>
+				<version>${kotlin.version}</version>
 				<configuration>
 					<args>
 						<arg>-Xjsr305=strict</arg>
@@ -140,20 +135,15 @@
 					<execution>
 						<id>compile</id>
 						<phase>compile</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
+						<goals><goal>compile</goal></goals>
 					</execution>
 					<execution>
 						<id>test-compile</id>
 						<phase>test-compile</phase>
-						<goals>
-							<goal>test-compile</goal>
-						</goals>
+						<goals><goal>test-compile</goal></goals>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

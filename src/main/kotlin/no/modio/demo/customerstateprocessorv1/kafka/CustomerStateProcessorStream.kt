@@ -2,6 +2,7 @@ package no.modio.demo.customerstateprocessorv1.kafka
 
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig
 import io.confluent.kafka.serializers.KafkaAvroDeserializerConfig
+import jakarta.annotation.PreDestroy
 import no.modio.demo.customerstateprocessorv1.event.handler.CustomerEventHandler
 import no.modio.demo.customerstateprocessorv1.kafka.config.KafkaStreamsConfig
 import no.modio.demo.customerstateprocessorv1.util.Constants.APPLICATION_NAME
@@ -16,7 +17,6 @@ import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
 import java.time.Duration
 import java.util.*
-import javax.annotation.PreDestroy
 
 @Component
 class CustomerStateProcessorStream(

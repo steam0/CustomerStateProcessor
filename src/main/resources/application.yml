@@ -2,8 +2,8 @@ server:
   port: 8085
 
 streams:
-  commandTopic: "demo.command"
-  stateTopic: "demo.customerstate"
+  commandTopic: "hello.demo.command"
+  stateTopic: "hello.demo.customerstate"
   stateDir: "target/state"
-  bootstrapServers: "localhost:29092"
+  bootstrapServers: "localhost:9092"
   schemaRegistryUrl: "http://localhost:8081"
